@@ -46,10 +46,10 @@ function createPage({}: Props) {
             elements: {listinigType: {value:string}; price: {value:string}};
         }
 
-        const {listingType, price} = target.elements;
+        const {listinigType, price} = target.elements;
         // const {data : listings, isLoading: loadingListining } = useActiveListings(contract);
 
-        if (listingType.value == 'directListing'){
+        if (listinigType.value == 'directListing'){
             createDirectListing({
                 assetContractAddress: process.env.NEXT_PUBLIC_NFT_CONTRACT!,
                 tokenId : selectNft.metadata.id,
@@ -69,7 +69,7 @@ function createPage({}: Props) {
             })
         }
 
-        if (listingType.value === "auctionListing" ) {
+        if (listinigType.value === "auctionListing" ) {
             createAuctionListing({
                 assetContractAddress: process.env.NEXT_PUBLIC_NFT_CONTRACT!,
                 tokenId : selectNft.metadata.id,
