@@ -3,7 +3,7 @@ import { ChainId, NFT, NATIVE_TOKENS, NATIVE_TOKEN_ADDRESS } from '@thirdweb-dev
 import Router from 'next/router';
 import React, { FormEvent, useState } from 'react'
 import { ThreeCircles } from 'react-loader-spinner';
-import Fotter from '../components/fotter';
+import Fotter from '../components/Fotter';
 import Header from '../components/Header'
 import network from '../utils/network';
 

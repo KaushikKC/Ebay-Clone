@@ -15,7 +15,7 @@ import Header from '../components/Header'
 import { ListingType } from '@thirdweb-dev/sdk';
 import { BanknotesIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Carousel from 'react-multi-carousel';
-import Fotter from '../components/fotter';
+import Fotter from '../components/Fotter';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
