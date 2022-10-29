@@ -103,7 +103,7 @@ const Home: NextPage = () => {
 
                 <div className='pt-2 space-y-4'>
                   <div>
-                    <h2 className='text-lg truncate'>{listining.asset.name}</h2>
+                    <h2 className='text-lg truncate text-yellow-500 drop-shadow-sm'>{listining.asset.name}</h2>
                     <hr />
                     <p className='truncate text-sm text-gray-600 mt-2'>{listining.asset.description}</p>
                   </div>

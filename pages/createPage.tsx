@@ -132,7 +132,7 @@ function createPage({}: Props) {
                 {ownedNfts?.data?.map((nft) => (
                     <div onClick={() => setSelectedNft(nft)} className={`flex flex-col space-y-2 card min-w-fit border-2 bg-gray-100 ${nft.metadata.id === selectNft?.metadata.id ? "border-black " : "border-transparent"}`} key= {nft.metadata.id}>
                         <MediaRenderer className='h-48 rounded-lg' src={nft.metadata.image} />
-                        <p className='text-lg truncate font-bold'>{nft.metadata.name}</p>
+                        <p className='text-lg truncate font-bold text-yellow-500 drop-shadow-sm'>{nft.metadata.name}</p>
                         <p className='text-xs truncate'>{nft.metadata.description}</p>
                     </div>
                     
