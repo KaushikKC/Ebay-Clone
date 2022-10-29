@@ -46,7 +46,7 @@ function createPage({}: Props) {
             elements: {listinigType: {value:string}; price: {value:string}};
         }
 
-        const {listingType, price} = e.target.elements;
+        const {listingType, price} = target.elements;
         // const {data : listings, isLoading: loadingListining } = useActiveListings(contract);
 
         if (listingType.value == 'directListing'){
