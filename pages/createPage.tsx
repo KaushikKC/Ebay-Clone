@@ -1,7 +1,9 @@
-import { useAddress, useContract, MediaRenderer, useNetwork, useNetworkMismatch, useOwnedNFTs, useCreateAuctionListing, useCreateDirectListing } from '@thirdweb-dev/react'
+import { useAddress, useContract, MediaRenderer, useNetwork, useNetworkMismatch, useOwnedNFTs, useCreateAuctionListing, useCreateDirectListing, useActiveListings } from '@thirdweb-dev/react'
 import { ChainId, NFT, NATIVE_TOKENS, NATIVE_TOKEN_ADDRESS } from '@thirdweb-dev/sdk';
 import Router from 'next/router';
 import React, { FormEvent, useState } from 'react'
+import { ThreeCircles } from 'react-loader-spinner';
+import Fotter from '../components/fotter';
 import Header from '../components/Header'
 import network from '../utils/network';
 
@@ -45,6 +47,7 @@ function createPage({}: Props) {
         }
 
         const {listingType, price} = e.target.elements;
+        // const {data : listings, isLoading: loadingListining } = useActiveListings(contract);
 
         if (listingType.value == 'directListing'){
             createDirectListing({
@@ -104,7 +107,27 @@ function createPage({}: Props) {
 
             <p>Below you will find the NFt's you own in your wallet</p>
 
+            {/* {loadingListining ? (
+          // <p className='text-center animate-pulse text-blue-500'>Loading</p> 
+          <div className="text-center mx-auto">
+          <ThreeCircles
+        
+  height="100"
+  width="1000"
+  color="#41b1ea"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel="three-circles-rotating"
+  outerCircleColor=""
+  innerCircleColor=""
+  middleCircleColor=""
+/>
+          </div>
+          
+          ) : (
 
+          )} */}
             <div className='flex overflow-x-scroll space-x-2 p-4'>
                 {ownedNfts?.data?.map((nft) => (
                     <div onClick={() => setSelectedNft(nft)} className={`flex flex-col space-y-2 card min-w-fit border-2 bg-gray-100 ${nft.metadata.id === selectNft?.metadata.id ? "border-black " : "border-transparent"}`} key= {nft.metadata.id}>
@@ -135,6 +158,7 @@ function createPage({}: Props) {
                 </form>
             )}
         </main>
+        <Fotter />
 
     </div>
   )
