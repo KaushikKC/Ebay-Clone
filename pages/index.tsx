@@ -96,7 +96,7 @@ const Home: NextPage = () => {
           
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto'>
             {listings?.map((listining) => (
-              <div className='flex flex-col card hover:scale-105 transition-all duration-150 ease-out' key={listining.id}>
+              <div className='flex flex-col card hover:scale-105 transition-all hover:drop-shadow duration-150 ease-out' key={listining.id}>
                 <div className='flex-1 flex flex-col pb-2 items-center'>
                   <MediaRenderer src={listining.asset.image}/>
                 </div>

@@ -59,8 +59,8 @@ function addItem({}: Props) {
     <div>
         <Header />
         <main className='max-w-6xl mx-auto p-10 border'>
-            <h1 className='text-4xl font-bold'>Add an Item to the <span className='text-blue-600'>Marketplace</span> </h1>
-            <h2 className='text-xl font-semibold pt-5'>Item Details</h2>
+            <h1 className='text-4xl font-bold'>Add an Item to the <span className='text-blue-600 drop-shadow'>Marketplace</span> </h1>
+            <h2 className='text-2xl text-yellow-500 drop-shadow font-semibold pt-5'>Item Details</h2>
             <p className='pb-5'>
                 By adding an item to the marketplace, you're essentially Minting an NDT of the item into your wallet which we can then list for sale!
             </p>
