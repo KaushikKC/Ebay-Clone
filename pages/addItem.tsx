@@ -2,6 +2,7 @@ import { useAddress, useContract } from '@thirdweb-dev/react'
 import { useRouter } from 'next/router';
 import { env } from 'process';
 import React, { FormEvent, useState } from 'react'
+import Fotter from '../components/fotter';
 import Header from '../components/Header'
 
 type Props = {}
@@ -93,6 +94,7 @@ function addItem({}: Props) {
             </form>
             </div>
         </main>
+        <Fotter />
     </div>
   )
 }

@@ -94,7 +94,7 @@ export default function Header({}: Props) {
 
         <hr />
 
-        <section className='flex py-3 space-x-6 text-xs md:text-sm
+        <section className='flex mt-3 py-3 space-x-6 text-xs md:text-sm
         whitespace-nowrap justify-center'>
             <p className='Link'>Home</p>
             <p className='Link'>Electronics</p>
