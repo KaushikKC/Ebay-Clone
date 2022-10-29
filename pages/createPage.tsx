@@ -27,6 +27,7 @@ function createPage({}: Props) {
 
     const networkMissmatch = useNetworkMismatch();
     const [, switchNetwork] = useNetwork();
+    const {data : listings, isLoading: loadingListining } = useActiveListings(contract);
 
     const {mutate: createDirectListing, isLoading,error} = useCreateDirectListing(contract);
 
@@ -47,7 +48,7 @@ function createPage({}: Props) {
         }
 
         const {listinigType, price} = target.elements;
-        // const {data : listings, isLoading: loadingListining } = useActiveListings(contract);
+        
 
         if (listinigType.value == 'directListing'){
             createDirectListing({
@@ -105,10 +106,10 @@ function createPage({}: Props) {
 
             <hr className='mb-5'/>
 
-            <p>Below you will find the NFt's you own in your wallet</p>
+            <p className='mb-3'>Below you will find the NFt's you own in your wallet</p>
 
-            {/* {loadingListining ? (
-          // <p className='text-center animate-pulse text-blue-500'>Loading</p> 
+            {loadingListining ? (
+        //   <p className='text-center animate-pulse text-blue-500'>Loading</p> 
           <div className="text-center mx-auto">
           <ThreeCircles
         
@@ -126,8 +127,6 @@ function createPage({}: Props) {
           </div>
           
           ) : (
-
-          )} */}
             <div className='flex overflow-x-scroll space-x-2 p-4'>
                 {ownedNfts?.data?.map((nft) => (
                     <div onClick={() => setSelectedNft(nft)} className={`flex flex-col space-y-2 card min-w-fit border-2 bg-gray-100 ${nft.metadata.id === selectNft?.metadata.id ? "border-black " : "border-transparent"}`} key= {nft.metadata.id}>
@@ -138,6 +137,8 @@ function createPage({}: Props) {
                     
             ))}
             </div>
+          )}
+            
 
             {selectNft && (
                 <form onSubmit={handleCreateListining}>
