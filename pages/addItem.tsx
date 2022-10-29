@@ -1,4 +1,5 @@
 import { useAddress, useContract } from '@thirdweb-dev/react'
+import { useRouter } from 'next/router';
 import { env } from 'process';
 import React, { FormEvent, useState } from 'react'
 import Header from '../components/Header'
@@ -7,7 +8,8 @@ type Props = {}
 
 function addItem({}: Props) {
     const address = useAddress();
-    const [previwe, setPreview] = useState<string>();
+    const router = useRouter();
+    const [preview, setPreview] = useState<string>();
     const [image, setImage] = useState<File>();
 
     const { contract} = useContract(
@@ -45,6 +47,7 @@ function addItem({}: Props) {
             const nft = await tx.data();
 
             console.log(receipt, tokenId, nft)
+            router.push('/');
 
         } catch (error) {
             console.log(error)
@@ -55,14 +58,14 @@ function addItem({}: Props) {
     <div>
         <Header />
         <main className='max-w-6xl mx-auto p-10 border'>
-            <h1 className='text-4xl font-bold'>Add an Item to the Marketplace</h1>
+            <h1 className='text-4xl font-bold'>Add an Item to the <span className='text-blue-600'>Marketplace</span> </h1>
             <h2 className='text-xl font-semibold pt-5'>Item Details</h2>
             <p className='pb-5'>
                 By adding an item to the marketplace, you're essentially Minting an NDT of the item into your wallet which we can then list for sale!
             </p>
 
             <div className='flex flex-col justify-center items-center md:flex-row md:space-x-5 pt-5'>
-                <img className='border h-80 object-contain' src="https://links.papareact.com/ucj" alt="" />
+                <img className='border h-80 object-contain' src={preview || "https://links.papareact.com/ucj"} alt="" />
             
 
             <form onSubmit={mintNft} className='flex flex-col flex-1 p-2 space-y-2'>

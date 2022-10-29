@@ -1,9 +1,4 @@
-import React from 'react'
+import { ChainId } from "@thirdweb-dev/react";
 
-type Props = {}
+export default ChainId.Mumbai;
 
-export default function network({}: Props) {
-  return (
-    <div>network</div>
-  )
-}

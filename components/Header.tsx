@@ -1,6 +1,9 @@
 import React from 'react'
 import {  useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 import Link from 'next/link';
+
+import pointer from "../Images/pointer.gif";
+import thumbs from "../Images/thumbs.gif";
 import {
     BellIcon,
     ShoppingCartIcon,
@@ -22,9 +25,16 @@ export default function Header({}: Props) {
         <nav className='flex justify-between'>
             <div className='flex items-center space-x-3 text-sm'>
                 {address ? (
-                    <button onClick={disconnect} className='connectWalletBtn'>Hi, {address.slice(0,4) + "..." + address.slice(-4)}</button>
+                    <div className='flex'>
+                        <Image  className='h-8 w-8' src={thumbs} alt=""></Image>
+                        <button onClick={disconnect} className='connectWalletBtn px-2 ml-2'>Hi, {address.slice(0,4) + "..." + address.slice(-4)}</button>
+                    </div>
+                    
                 ) : (
-                    <button onClick={connectWithMetamask} className='connectWalletBtn'>Connect your wallet</button>
+                    <div className='flex'>
+                    <Image src={pointer} className='h-10 w-8 -rotate-90 ' alt=''></Image>
+                    <button onClick={connectWithMetamask} className='connectWalletBtn px-2 ml-2'>Connect your wallet</button>
+                    </div>
                 )
                 }
 
@@ -76,7 +86,7 @@ export default function Header({}: Props) {
             <button className='hidden sm:inline bg-blue-600 text-white px-5 mx-1
             md:px-10 py-2 border-2 border-blue-600'>Search</button>
 
-            <Link href="">
+            <Link href="/createPage">
                 <button className='border-2 border-blue-600 px-5 md:px-10 py-2
                 text-blue-600 hover:bg-blue-600/50 hover:text-white'>List item</button>
             </Link>
