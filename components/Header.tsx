@@ -63,7 +63,7 @@ export default function Header({}: Props) {
             </div>
         </nav>
 
-        <hr  className='mt-2 drop-shadow-lg shadow-lg p-[1px] bg-blue-600/30'/>
+        <hr  className='mt-2 drop-shadow-lg shadow-lg p-[0.5px] bg-blue-600/30'/>
 
         <section className='flex items-center space-x-2 py-5'>
             <div className='h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0 drop-shadow-md'>
@@ -104,7 +104,7 @@ export default function Header({}: Props) {
             </Link>
         </section>
 
-        <hr className='p-[1px]'/>
+        <hr className='p-[1px] mt-5'/>
 
         <section className='flex mt-3 py-3 space-x-6 text-xs md:text-sm
         whitespace-nowrap justify-center font-semibold cursor-pointer'>

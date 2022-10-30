@@ -224,7 +224,7 @@ function ListiningPage({}: Props) {
     transition={{ duration: 0.5 }}
         >
 
-        <main className='max-w-5xl mx-auto p-2 flex flex-col lg:flex-row space-y-10 space-x-5 pr-10'>
+        <main className='max-w-5xl mx-auto p-2 flex flex-col lg:flex-row space-y-10 space-x-5 pr-10 mb-8'>
             <div className='p-10 drop-shadow-2xl border mx-auto lg:mx-0 max-w-md lg:max-w-xl'>
                 
                 <div>
