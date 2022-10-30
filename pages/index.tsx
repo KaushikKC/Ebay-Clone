@@ -46,19 +46,20 @@ const Home: NextPage = () => {
   const { data: listings, isLoading: loadingListining } = useActiveListings(contract);
   console.log(listings)
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <Image
                 src={line}
-                className="w-full md:flex bg:bg-repeat-y hidden  opacity-30 -z-40 absolute top-0 min-h-screen"
+                className="w-full md:flex bg:bg-repeat-y hidden  opacity-30 -z-40 absolute top-0 min-h-[500px]"
                 alt=""
             />
 
+      
+      <Header />
       <motion.div
     initial={{ opacity: 0, scale: 2 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5 }}
       >
-      <Header />
       <Carousel responsive={responsive} className="relative w-[100%] mx-auto  " autoPlay={true} rewindWithAnimation={true} rewind={true}>
             <div className='text-white font-semibold'>
                 <div className='w-[100%] px-4 mb-5' >

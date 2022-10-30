@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import pointer from "../Images/pointer.gif";
 import thumbs from "../Images/thumbs.gif";
+import { motion } from "framer-motion"
 import {
     BellIcon,
     ShoppingCartIcon,
@@ -22,6 +23,11 @@ export default function Header({}: Props) {
 
   return (
     <div className='max-w-6xl mx-auto p-2'>
+        <motion.div
+    initial={{ opacity: 0, }}
+    animate={{ opacity: 1, }}
+    transition={{ duration: 1 }}
+        >
         <nav className='flex justify-between'>
             <div className='flex items-center space-x-3 text-sm font-semibold'>
                 {address ? (
@@ -61,6 +67,11 @@ export default function Header({}: Props) {
 
         <section className='flex items-center space-x-2 py-5'>
             <div className='h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0'>
+            <motion.div
+    initial={{ opacity: 0, }}
+    animate={{ opacity: 1, }}
+    transition={{ duration: 3 }}
+        >
                 <Link href="/">
                     <Image 
                     className='h-full w-full object-contain'
@@ -70,6 +81,7 @@ export default function Header({}: Props) {
                     height={100}
                     />
                 </Link>
+                </motion.div>
             </div>
 
             <button className='hidden lg:flex items-center space-x-2 w-20 font-semibold'>
@@ -108,6 +120,7 @@ export default function Header({}: Props) {
             <p className='Link hidden xl:inline'>Other</p>
             <p className='Link'>More</p>
         </section>
+        </motion.div>
     </div>
   )
 }

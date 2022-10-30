@@ -8,6 +8,7 @@ import network from "../../utils/network"
 // import { useStore } from "components/header/Header"
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header';
+import { motion } from "framer-motion"
 import { ListingType, NATIVE_TOKENS } from '@thirdweb-dev/sdk';
 import Countdown from "react-countdown"
 import toast, { Toaster } from 'react-hot-toast';
@@ -217,6 +218,11 @@ function ListiningPage({}: Props) {
   return (
     <div>
         <Header />
+        <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+        >
 
         <main className='max-w-5xl mx-auto p-2 flex flex-col lg:flex-row space-y-10 space-x-5 pr-10'>
             <div className='p-10 drop-shadow-2xl border mx-auto lg:mx-0 max-w-md lg:max-w-xl'>
@@ -391,6 +397,7 @@ function ListiningPage({}: Props) {
 
             </section>
         </main>
+        </motion.div>
     </div>
   )
 }
