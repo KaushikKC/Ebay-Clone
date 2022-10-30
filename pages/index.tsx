@@ -5,6 +5,7 @@ import { ThreeCircles } from 'react-loader-spinner'
 import meter1 from "../Images/img.webp"
 import meter2 from "../Images/img1.webp"
 import meter3 from "../Images/img2.webp"
+import line from "../Images/bkg-lines.svg"
 import { motion } from "framer-motion"
 import {
   useActiveListings,
@@ -16,6 +17,7 @@ import { ListingType } from '@thirdweb-dev/sdk';
 import { BanknotesIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Carousel from 'react-multi-carousel';
 import Fotter from '../components/Fotter';
+import Link from 'next/link';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -45,6 +47,12 @@ const Home: NextPage = () => {
   console.log(listings)
   return (
     <div className="">
+      <Image
+                src={line}
+                className="w-full md:flex bg:bg-repeat-y hidden  opacity-30 -z-40 absolute top-0 min-h-screen"
+                alt=""
+            />
+
       <motion.div
     initial={{ opacity: 0, scale: 2 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -96,6 +104,7 @@ const Home: NextPage = () => {
           
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto'>
             {listings?.map((listining) => (
+              <Link href={`/listining/${listining.id}`}>
               <div className='flex flex-col card hover:scale-105 transition-all hover:drop-shadow duration-150 ease-out' key={listining.id}>
                 <div className='flex-1 flex flex-col pb-2 items-center'>
                   <MediaRenderer src={listining.asset.image}/>
@@ -124,7 +133,9 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
+            
           </div>
         )}
       </main>

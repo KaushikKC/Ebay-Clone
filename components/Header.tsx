@@ -23,7 +23,7 @@ export default function Header({}: Props) {
   return (
     <div className='max-w-6xl mx-auto p-2'>
         <nav className='flex justify-between'>
-            <div className='flex items-center space-x-3 text-sm'>
+            <div className='flex items-center space-x-3 text-sm font-semibold'>
                 {address ? (
                     <div className='flex'>
                         <Image  className='h-8 w-8' src={thumbs} alt=""></Image>
@@ -42,8 +42,8 @@ export default function Header({}: Props) {
                 <p className='headerLink'>Help & Contact</p>
             </div>
 
-            <div className='flex items-center space-x-6 text-sm'>
-                <p className='headerLink w-8' >Ship to</p>
+            <div className='flex items-center space-x-6 text-sm font-semibold'>
+                <p className='headerLink w-8' >ShipTo</p>
                 <p className='headerLink'>Sell</p>
                 <p className='headerLink'>Watchlist</p>
 
@@ -59,7 +59,7 @@ export default function Header({}: Props) {
 
         <hr  className='mt-2'/>
 
-        <section className='flex items-center space-x-2py-5'>
+        <section className='flex items-center space-x-2 py-5'>
             <div className='h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0'>
                 <Link href="/">
                     <Image 
@@ -72,30 +72,30 @@ export default function Header({}: Props) {
                 </Link>
             </div>
 
-            <button className='hidden lg:flex items-center space-x-2 w-20'>
+            <button className='hidden lg:flex items-center space-x-2 w-20 font-semibold'>
                 <p className='text-gray-600 text-sm'>Shop by Category</p>
                 <ChevronDownIcon className='h-4 flex-shrink-0'/>
             </button>
 
-            <div className='flex items-center space-x-2 mx-1 px-2 md:px-5 py-2
+            <div className='flex items-center space-x-2 mx-1 rounded-md px-2 md:px-5 py-2
             border-black border-2 flex-1'>
                 <MagnifyingGlassIcon className='w-5 text-gray-400'/>
                 <input className='flex-1 outline-none' placeholder='Search for Anything' type="text" />
             </div>
 
-            <button className='hidden sm:inline bg-blue-600 text-white px-5 mx-1
+            <button className='hidden sm:inline font-bold rounded-md bg-blue-600 text-white px-5 mx-1
             md:px-10 py-2 border-2 border-blue-600'>Search</button>
 
             <Link href="/createPage">
-                <button className='border-2 border-blue-600 px-5 md:px-10 py-2
+                <button className='border-2 border-blue-600 rounded-md px-5 md:px-10 py-2
                 text-blue-600 hover:bg-blue-600/50 hover:text-white'>List item</button>
             </Link>
         </section>
 
-        <hr />
+        <hr/>
 
         <section className='flex mt-3 py-3 space-x-6 text-xs md:text-sm
-        whitespace-nowrap justify-center'>
+        whitespace-nowrap justify-center font-semibold cursor-pointer'>
             <p className='Link'>Home</p>
             <p className='Link'>Electronics</p>
             <p className='Link'>Computers</p>

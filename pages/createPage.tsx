@@ -115,7 +115,7 @@ function createPage({}: Props) {
         
   height="100"
   width="1000"
-  color="#41b1ea"
+  color="#109adf"
   wrapperStyle={{}}
   wrapperClass=""
   visible={true}
