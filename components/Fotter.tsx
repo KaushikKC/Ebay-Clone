@@ -4,14 +4,14 @@ type Props = {}
 
 export default function Fotter({}: Props) {
   return (
-    <div className='fixed bottom-0 left-50 w-full bg-slate-200 opacity-60'>
+    <div className='fixed bottom-0 left-50 w-full bg-slate-200 opacity-60 shadow-lg h-12'>
         <hr className='mb-4'/>
+        <div className='flex justify-center space-x-5 mb-2 items-center'>
+        <p className=' mb-3'> ©️ Kaushik</p>
         
-        <p className='mx-auto flex justify-center mb-3'> ©️ Kaushik</p>
-        <div className='flex justify-center space-x-5 mb-2'>
         <a
           href="https://twitter.com/Kaushikk1704"
-          className=""
+          className="mb-3"
       >
           <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ export default function Fotter({}: Props) {
 
       <a
           href="https://github.com/KaushikKC"
-          className=""
+          className="mb-3"
       >
           <svg
               xmlns="http://www.w3.org/2000/svg"

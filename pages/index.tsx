@@ -60,7 +60,7 @@ const Home: NextPage = () => {
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.5 }}
       >
-      <Carousel responsive={responsive} className="relative w-[100%] mx-auto  " autoPlay={true} rewindWithAnimation={true} rewind={true}>
+      <Carousel responsive={responsive} className="drop-shadow-lg relative w-[100%] mx-auto  " autoPlay={true} rewindWithAnimation={true} rewind={true}>
             <div className='text-white font-semibold'>
                 <div className='w-[100%] px-4 mb-5' >
                 <Image src={meter1} alt='' />
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto'>
             {listings?.map((listining) => (
               <Link href={`/listining/${listining.id}`}>
-              <div className='flex flex-col card hover:scale-105 transition-all hover:drop-shadow duration-150 ease-out' key={listining.id}>
+              <div className='flex flex-col drop-shadow card hover:scale-105 transition-all hover:drop-shadow-lg duration-150 ease-out' key={listining.id}>
                 <div className='flex-1 flex flex-col pb-2 items-center'>
                   <MediaRenderer src={listining.asset.image}/>
                 </div>

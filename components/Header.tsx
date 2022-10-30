@@ -29,7 +29,7 @@ export default function Header({}: Props) {
     transition={{ duration: 1 }}
         >
         <nav className='flex justify-between'>
-            <div className='flex items-center space-x-3 text-sm font-semibold'>
+            <div className='flex items-center space-x-3 text-sm font-semibold drop-shadow-lg'>
                 {address ? (
                     <div className='flex'>
                         <Image  className='h-8 w-8' src={thumbs} alt=""></Image>
@@ -48,7 +48,7 @@ export default function Header({}: Props) {
                 <p className='headerLink'>Help & Contact</p>
             </div>
 
-            <div className='flex items-center space-x-6 text-sm font-semibold'>
+            <div className='flex items-center space-x-6 text-sm font-semibold drop-shadow-md'>
                 <p className='headerLink w-8' >ShipTo</p>
                 <p className='headerLink'>Sell</p>
                 <p className='headerLink'>Watchlist</p>
@@ -63,10 +63,10 @@ export default function Header({}: Props) {
             </div>
         </nav>
 
-        <hr  className='mt-2'/>
+        <hr  className='mt-2 drop-shadow-lg shadow-lg p-[1px] bg-blue-600/30'/>
 
         <section className='flex items-center space-x-2 py-5'>
-            <div className='h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0'>
+            <div className='h-16 w-16 sm:w-28 md:w-44 cursor-pointer flex-shrink-0 drop-shadow-md'>
             <motion.div
     initial={{ opacity: 0, }}
     animate={{ opacity: 1, }}
@@ -74,7 +74,7 @@ export default function Header({}: Props) {
         >
                 <Link href="/">
                     <Image 
-                    className='h-full w-full object-contain'
+                    className='h-full w-full object-contain drop-shadow-md'
                     alt="Thirdweb Logo"
                     src="https://links.papareact.com/bdb"
                     width={100}
@@ -90,7 +90,7 @@ export default function Header({}: Props) {
             </button>
 
             <div className='flex items-center space-x-2 mx-1 rounded-md px-2 md:px-5 py-2
-            border-black border-2 flex-1'>
+            border-black border-2 flex-1 shadow-lg'>
                 <MagnifyingGlassIcon className='w-5 text-gray-400'/>
                 <input className='flex-1 outline-none' placeholder='Search for Anything' type="text" />
             </div>
@@ -104,7 +104,7 @@ export default function Header({}: Props) {
             </Link>
         </section>
 
-        <hr/>
+        <hr className='p-[1px]'/>
 
         <section className='flex mt-3 py-3 space-x-6 text-xs md:text-sm
         whitespace-nowrap justify-center font-semibold cursor-pointer'>
